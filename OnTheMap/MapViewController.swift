@@ -22,7 +22,7 @@ class MapViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateStudentLocations), name: Notification.Name(rawValue: "updateStudents"), object: nil)
     }
     
-    func updateStudentLocations() {
+    @objc func updateStudentLocations() {
         var pins = [MKPointAnnotation]()
         
         for student in studentsData.studentLocations! {

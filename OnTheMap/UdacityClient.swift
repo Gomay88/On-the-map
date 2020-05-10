@@ -38,7 +38,7 @@ class UdacityClient {
         
         apiSession.makeRequestToURL(url: url, method: method, headers: fullHeaders, body: body) { (data, error) in
             if let data = data {
-                let jsonDictionary = try! JSONSerialization.jsonObject(with: data.subdata(in: Range(uncheckedBounds: (5, data.count))), options: .allowFragments) as! [String: AnyObject]
+                let jsonDictionary = try? JSONSerialization.jsonObject(with: data.subdata(in: Range(uncheckedBounds: (5, data.count))), options: .allowFragments) as? [String: AnyObject]
                 responseHandler(jsonDictionary, nil)
             } else {
                 responseHandler(nil, error)

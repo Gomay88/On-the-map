@@ -20,7 +20,7 @@ class StudentsOnTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: Notification.Name(rawValue: "updateStudents"), object: nil)
     }
     
-    func updateTable() {
+    @objc func updateTable() {
         tableView.reloadData()
     }
     
